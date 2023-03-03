@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-// const fs= require('fs');
+const fs= require('fs');
 
 inquirer
 .prompt([
@@ -61,21 +61,18 @@ inquirer
 //     : console.log('You forgot your password already!?')
 // );
 
-
-
-
 .then((data) => {
-    fs.writeFile("./README.md", generateREADME(response), (err) =>
+    fs.writeFile("./README.md", READMEgenerate(data), (err) =>
         err ? console.error(err) : console.log("Generated a new README!")
 )});
 
-function READMEgenerate(response) {
+function READMEgenerate(data) {
     return `
-# ${title}
+# ${data.title}
 
 ## Description
 
-${description}
+${data.description}
 
 ## Table of Contents
 
