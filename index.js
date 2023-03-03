@@ -1,8 +1,8 @@
 const inquirer = require('inquirer');
-const fs= require('fs');
+// const fs= require('fs');
 
 inquirer
-.prompt = ([
+.prompt([
     {
         type: 'input',
         message: 'What is the title of your project?',
@@ -41,8 +41,8 @@ inquirer
     },
     {
         type: 'input',
-        message: 'What is the title of your project?',
-        name: 'title',
+        message: 'what are the credits for your project?',
+        name: 'credits',
     },
     {
         type: 'input',
@@ -51,10 +51,58 @@ inquirer
     },
     {
         type: 'input',
-            message: 'What is your email?',
-            name: 'email',
+        message: 'What is your email?',
+        name: 'email',
     },  
 ])
+// .then((response) =>
+//     response.confirm === response.password
+//     ? console.log('Sucess!')
+//     : console.log('You forgot your password already!?')
+// );
 
-.then((data)) => {}
+
+
+
+.then((data) => {
+    fs.writeFile("./README.md", generateREADME(response), (err) =>
+        err ? console.error(err) : console.log("Generated a new README!")
+)});
+
+function READMEgenerate(response) {
+    return `
+# ${title}
+
+## Description
+
+${description}
+
+## Table of Contents
+
+- [Description](#descsription)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [Test](#test)
+- [License](#license)
+- [Questions](#questions)
+
+## Installation:
+    ${data.instruction}
+
+## Usage: 
+    ${data.usage}
+
+## Credits:
+    ${data.credits}
+## Test:
+    ${data.test}
+## Questions
+
+Contact Information: \n
+    -Github username: ${data.github} \n
+    -Email: ${data.email}
+
+    `
+}
     
