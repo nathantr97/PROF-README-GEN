@@ -1,7 +1,11 @@
+// need to define const fs and inquirer //
+
 const fs= require('fs');
 const inquirer = require('inquirer');
 
-
+// follow Instruction setup in day 2 activity #19 //
+// prompt needs to include title, description, installation, usage, contribution, test , license, credits, email, github username //
+// refer to http://adilapapaya.com/docs/inquirer/#promptstype for prompt types //
 inquirer
 .prompt([
     {
@@ -63,7 +67,7 @@ inquirer
 // );
 
 .then((data) => {
-    fs.writeFile("./README.md", READMEgenerate(data), (err) =>
+    fs.writeFile("./GenREADME.md", READMEgenerate(data), (err) =>
         err ? console.error(err) : console.log("HOORAY! A new README has been generated!")
 )});
 
