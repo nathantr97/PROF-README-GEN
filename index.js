@@ -1,5 +1,6 @@
-const inquirer = require('inquirer');
 const fs= require('fs');
+const inquirer = require('inquirer');
+
 
 inquirer
 .prompt([
@@ -63,12 +64,15 @@ inquirer
 
 .then((data) => {
     fs.writeFile("./README.md", READMEgenerate(data), (err) =>
-        err ? console.error(err) : console.log("Generated a new README!")
+        err ? console.error(err) : console.log("HOORAY! A new README has been generated!")
 )});
 
 function READMEgenerate(data) {
     return `
-# ${data.title}
+
+# Title
+
+ ${data.title}
 
 ## Description
 
