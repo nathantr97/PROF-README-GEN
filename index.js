@@ -74,9 +74,7 @@ inquirer
 function READMEgenerate(data) {
     return `
 
-# Title
-
- ${data.title}
+# ${data.title}
 
 ## Description
 
@@ -92,19 +90,19 @@ ${data.description}
 - [License](#license)
 - [Questions](#questions)
 
-## Installation:
+## Installation
     ${data.instruction}
 
-## Usage: 
+## Usage
     ${data.usage}
 
-## Credits:
+## Credits
     ${data.credits}
-## Test:
-    ${data.test}
-## Questions
 
-Contact Information: \n
+## Test
+    ${data.test}
+    
+## Questions
     -Github username: ${data.github} \n
     -Email: ${data.email}
 
