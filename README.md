@@ -8,6 +8,7 @@ The motivation for this project was to create an application using Node in order
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Links](#links)
 - [Credits](#credits)
 - [License](#license)
 
@@ -25,20 +26,25 @@ The motivation for this project was to create an application using Node in order
 <li> Locate the index.js file and run command "npm install" in Integrated Terminal </li>
 <li> To trigger the README Generator, run "node index.js" in the same terminal <li>
 <li> User will be presented with one prompt at a time and will receive the next prompt after submitting an appropriate answer followed by the "Enter" key </li>
-<li> Once all prompts have been answered, user will be greeted with  
-
+<li> Once all prompts have been answered, user will find their generated README in GenREADME.md </li> 
 
 ## Links
 
+Github Repo Link:
+
+https://github.com/nathantr97/PROF-README-GEN
+
 ## Credits
 
-## License 
+<li> Inquirer Documentation
 
-## Badge 
+http://adilapapaya.com/docs/inquirer/#promptstype
 
-## Questions
+<li> License Badge
 
-<li> If you have any questions please feel free to contact me: nhantran1997@icloud.com </li>
+https://github.com/DAVFoundation/captain-n3m0/issues/4
+
+
 
 
 

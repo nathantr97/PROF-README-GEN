@@ -10,6 +10,16 @@ inquirer
 .prompt([
     {
         type: 'input',
+        message: 'What is your name?',
+        name: 'firstname',
+    },
+    {
+        type: 'input',
+        message: 'What year are you currently in?',
+        name: 'year',
+    },
+    {
+        type: 'input',
         message: 'What is the title of your project?',
         name: 'title',
     },
@@ -41,7 +51,7 @@ inquirer
     {
         type: 'list',
         message: 'Which license do you want to use?',
-        choices: ["ISC", "MIT", "None"],
+        choices: ["ISC License", "MIT License", "None"],
         name: 'license',
     },
     {
@@ -60,11 +70,7 @@ inquirer
         name: 'email',
     },  
 ])
-// .then((response) =>
-//     response.confirm === response.password
-//     ? console.log('Sucess!')
-//     : console.log('You forgot your password already!?')
-// );
+
 
 .then((data) => {
     fs.writeFile("./GenREADME.md", READMEgenerate(data), (err) =>
@@ -75,6 +81,8 @@ function READMEgenerate(data) {
     return `
 
 # ${data.title}
+
+[![license](https://img.shields.io/github/license/DAVFoundation/captain-n3m0.svg?style=flat-square)](https://github.com/DAVFoundation/captain-n3m0/blob/master/LICENSE)
 
 ## Description
 
@@ -91,7 +99,7 @@ ${data.description}
 - [Questions](#questions)
 
 ## Installation
-    ${data.instruction}
+    ${data.installation}
 
 ## Usage
     ${data.usage}
@@ -101,9 +109,20 @@ ${data.description}
 
 ## Test
     ${data.test}
+
+## License
+    ${data.license} \n
+    Copyright (c) ${data.year} ${data.firstname}
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     
 ## Questions
-    -Github username: ${data.github} \n
+    -Github username: ${data.github}
+    -Github profile: https://github.com/${data.github}
     -Email: ${data.email}
 
     `
