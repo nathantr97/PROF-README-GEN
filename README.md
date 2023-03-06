@@ -24,7 +24,7 @@ The motivation for this project was to create an application using Node in order
 ## Usage
 
 <li> Locate the index.js file and run command "npm install" in Integrated Terminal </li>
-<li> To trigger the README Generator, run "node index.js" in the same terminal <li>
+<li> To trigger the README Generator, run "node index.js" in the same terminal </li>
 <li> User will be presented with one prompt at a time and will receive the next prompt after submitting an appropriate answer followed by the "Enter" key </li>
 <li> Once all prompts have been answered, user will find their generated README in GenREADME.md </li> 
 
